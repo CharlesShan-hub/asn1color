@@ -1,0 +1,32 @@
+{
+  "name": "asn1-highlight",
+  "displayName": "ASN.1 Syntax Highlight",
+  "description": "Syntax highlighting for ASN.1 (Abstract Syntax Notation One) files",
+  "version": "0.0.1",
+  "publisher": "dlt2811",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "asn1",
+        "aliases": ["ASN.1", "asn1"],
+        "extensions": [".asn1", ".asn"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "asn1",
+        "scopeName": "source.asn1",
+        "path": "./syntaxes/asn1.tmLanguage.json"
+      }
+    ]
+  }
+}

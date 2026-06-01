@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "ASN.1",
+  "scopeName": "source.asn1",
+  "fileTypes": ["asn1", "asn"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#builtin-types" },
+    { "include": "#type-reference" },
+    { "include": "#assignment" },
+    { "include": "#tag" },
+    { "include": "#numbers" },
+    { "include": "#quoted-strings" },
+    { "include": "#range" },
+    { "include": "#ellipsis" },
+    { "include": "#field-name" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "match": "--.*$", "name": "comment.line.double-dash.asn1" },
+        { "begin": "/\\*", "end": "\\*/", "name": "comment.block.asn1" }
+      ]
+    },
+    "keywords": {
+      "match": "\\b(?i:BEGIN|END|DEFINITIONS|IMPLICIT|EXPLICIT|OPTIONAL|DEFAULT|CHOICE|SEQUENCE|SET|OF|TAGS|AUTOMATIC|IMPORTS|EXPORTS|FROM|TRUE|FALSE|NULL|SIZE|MIN|MAX|ABSENT|PRESENT|PLUS-INFINITY|MINUS-INFINITY|ALL|EXCEPT|UNION|INTERSECTION|CLASS|TYPE-IDENTIFIER|ABSTRACT-SYNTAX|UNIVERSAL|APPLICATION|PRIVATE|ENCODED|CONSTRAINED|INCLUDES|PATTERN)\\b",
+      "name": "keyword.other.asn1"
+    },
+    "builtin-types": {
+      "match": "\\b(?i:INTEGER|BOOLEAN|OCTET\\s+STRING|BIT\\s+STRING|IA5String|UTF8String|VisibleString|NumericString|PrintableString|TeletexString|VideotexString|GraphicString|GeneralString|BMPString|UniversalString|ENUMERATED|REAL|OBJECT\\s+IDENTIFIER|ObjectDescriptor|UTCTime|GeneralizedTime|CHARACTER\\s+STRING|EMBEDDED\\s+PDV|EXTERNAL)\\b",
+      "name": "storage.type.asn1"
+    },
+    "type-reference": {
+      "match": "\\b[A-Z][a-zA-Z0-9]*\\b",
+      "name": "entity.name.type.asn1"
+    },
+    "assignment": {
+      "match": "::=",
+      "name": "keyword.operator.assignment.asn1"
+    },
+    "tag": {
+      "match": "\\[[0-9.]+\\]",
+      "name": "meta.tag.asn1"
+    },
+    "numbers": {
+      "match": "\\b[0-9]+\\b",
+      "name": "constant.numeric.asn1"
+    },
+    "quoted-strings": {
+      "match": "\"[^\"]*\"",
+      "name": "string.quoted.double.asn1"
+    },
+    "range": {
+      "match": "\\.\\.(?!\\.)",
+      "name": "keyword.operator.range.asn1"
+    },
+    "ellipsis": {
+      "match": "\\.\\.\\.",
+      "name": "keyword.operator.ellipsis.asn1"
+    },
+    "field-name": {
+      "match": "\\b[a-z][a-zA-Z0-9]*\\b",
+      "name": "variable.other.asn1"
+    },
+    "punctuation": {
+      "match": "[,;]",
+      "name": "punctuation.separator.asn1"
+    }
+  }
+}
