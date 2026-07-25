@@ -1,0 +1,9 @@
+{
+  "id": "asn1-highlight",
+  "name": "ASN.1 Syntax Highlight",
+  "version": "0.0.1",
+  "minAppVersion": "1.0.0",
+  "description": "Syntax highlighting for ASN.1 (Abstract Syntax Notation One) files",
+  "author": "Charles Shan",
+  "isDesktopOnly": false
+}
